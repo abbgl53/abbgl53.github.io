@@ -156,13 +156,33 @@ nav.scrolled {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* CSS "Crop" for logo with too much whitespace */
+.logo-crop {
+    height: 85px;
+    /* Increased height */
+    width: 160px;
+    /* Increased width */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-crop img {
+    height: 180%;
+    /* Higher zoom to crop more whitespace */
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.logo-crop:hover img {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -463,19 +483,102 @@ h2.section-title::after {
 /* Responsive */
 @media (max-width: 768px) {
     .container {
-        padding: 0 1.5rem;
+        padding: 0 0.1rem;
+        /* Reduced to move logo closer to the left edge */
+    }
+
+    /* Navbar Mobile Adjustment - Transparent and Integrated */
+    nav {
+        background: transparent;
+        backdrop-filter: none;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .dark nav {
+        background: transparent;
+    }
+
+    /* Keep background only on scroll */
+    nav.scrolled {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        height: 70px;
+    }
+
+    .dark nav.scrolled {
+        background: rgba(3, 7, 18, 0.85);
+    }
+
+    .logo-crop {
+        height: 50px;
+        /* More reasonable for mobile */
+        width: 100px;
+    }
+
+    .logo-crop img {
+        height: 160%;
+    }
+
+    /* Hero Mobile Fix */
+    .hero {
+        padding-top: 80px;
+        /* Reduced to pull it up slightly */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-attachment: scroll;
+        /* Performance on mobile */
+    }
+
+    .hero .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
     }
 
     .hero h1 {
         font-size: 2.8rem;
+        line-height: 1;
+        margin-top: 0.5rem;
     }
 
-    .nav-links {
-        display: none;
+    .hero p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .profile-img-container {
+        width: 180px;
+        /* Restoring size for better impact */
+        height: 180px;
+        margin-bottom: 1rem;
+    }
+
+    h2.section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Stack cards better */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card {
+        padding: 2rem 1.5rem;
     }
 
     section {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+
+    /* Hide desktop nav links on small screens for cleaner look */
+    .nav-links {
+        display: none;
     }
 }
 
