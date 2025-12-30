@@ -27,41 +27,56 @@ if (savedTheme === 'light') {
     lucide.createIcons();
 }
 
-// Navbar Scroll Effect
+// Navbar and Reveal elements (declared globally for optimized scroll handler)
 const navbar = document.getElementById('navbar');
+const reveals = document.querySelectorAll('.reveal');
+
+// Optimized Scroll Handler
+let isScrolling = false;
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            // Navbar Scroll Effect
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Hero Parallax Effect
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPositionY = `${window.scrollY * 0.5}px`;
+            }
+
+            // Reveal Animation Logic
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+
+            isScrolling = false;
+        });
+        isScrolling = true;
     }
 });
 
-// Hero Parallax Effect
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const scroll = window.scrollY;
-    hero.style.backgroundPositionY = `${scroll * 0.5}px`;
+// Initial check for reveal animations (run once on load)
+reveals.forEach(reveal => {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveal.getBoundingClientRect().top;
+    const elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+        reveal.classList.add('active');
+    }
 });
 
-// Reveal Animation Logic
-const reveals = document.querySelectorAll('.reveal');
-
-const revealOnScroll = () => {
-    reveals.forEach(reveal => {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveal.getBoundingClientRect().top;
-        const elementVisible = 150;
-
-        if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add('active');
-        }
-    });
-};
-
-window.addEventListener('scroll', revealOnScroll);
-// Initial check
-revealOnScroll();
 
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
