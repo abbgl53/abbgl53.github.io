@@ -35,12 +35,15 @@
                 </div>
             </a>
             <div class="nav-links">
-                <a href="#about">Hakkımda</a>
-                <a href="#skills">Yetenekler</a>
-                <a href="#experience">Deneyim</a>
-                <a href="#projects">Projeler</a>
-                <a href="#contact">İletişim</a>
-                <button id="theme-toggle" aria-label="Temayı Değiştir">
+                <a href="#about" data-i18n="nav_about">About</a>
+                <a href="#skills" data-i18n="nav_skills">Skills</a>
+                <a href="#experience" data-i18n="nav_experience">Experience</a>
+                <a href="#projects" data-i18n="nav_projects">Projects</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <button id="lang-toggle" class="control-btn" aria-label="Language Toggle">EN</button>
+                <button id="theme-toggle" class="control-btn" aria-label="Theme Toggle">
                     <i data-lucide="sun"></i>
                 </button>
             </div>
@@ -55,9 +58,9 @@
                     <img src="assets/animation_pp.jpg" alt="Ahmet Babaoğlu">
                 </div>
                 <h1>Ahmet Babaoğlu</h1>
-                <p>C++ Software Developer</p>
+                <p data-i18n="hero_subtitle">C++ Software Developer</p>
                 <div style="margin-top: 2rem;">
-                    <a href="#contact" class="btn-primary">İletişime Geç</a>
+                    <a href="#contact" class="btn-primary" data-i18n="hero_btn">Get in Touch</a>
                 </div>
             </div>
         </section>
@@ -65,13 +68,13 @@
         <!-- About Section -->
         <section id="about">
             <div class="container reveal">
-                <h2 class="section-title">Hakkımda</h2>
+                <h2 class="section-title" data-i18n="about_title">Summary</h2>
                 <div class="glass card">
-                    <p style="font-size: 1.2rem;">
-                        Yazılım geliştirme alanında 3+ yıl deneyime sahip; özellikle C++ ve Linux tabanlı ağ ve sistem
-                        uygulamaları geliştirme alanında aktif rol almış, yapay zekâ araçlarını etkin kullanan,
-                        araştırma ve geliştirmeye yatkın, yeni teknolojileri öğrenmeye meraklı ve ekip çalışmasına
-                        uyumlu bir yazılım mühendisiyim.
+                    <p style="font-size: 1.2rem;" data-i18n="about_text">
+                        I am a software engineer with 3+ years of experience in software development; I have taken an
+                        active role especially in developing C++ and Linux based network and system applications; I
+                        effectively use AI tools, possess a research and development culture, adapt to changing
+                        requirements, and eager to learn new technologies.
                     </p>
                 </div>
             </div>
@@ -80,23 +83,14 @@
         <!-- Skills Section -->
         <section id="skills">
             <div class="container reveal">
-                <h2 class="section-title">Teknik Yetkinlikler</h2>
-                <div class="skills-container">
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">QT</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Selenium</span>
-                    <span class="skill-tag">Flutter</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">D</span>
-                    <span class="skill-tag">Cross Compile</span>
-                    <span class="skill-tag">Vibe Coding</span>
-                    <span class="skill-tag">DPDK</span>
-                    <span class="skill-tag">Deep Packet Inspection (DPI)</span>
+                <h2 class="section-title" data-i18n="skills_title">Technical Skills</h2>
+                <div class="skills-container" id="technical-skills">
+                    <!-- Dynamic Content -->
+                </div>
+
+                <h2 class="section-title" data-i18n="soft_skills_title" style="margin-top: 4rem;">Soft Skills</h2>
+                <div class="skills-container" id="soft-skills">
+                    <!-- Dynamic Content -->
                 </div>
             </div>
         </section>
@@ -104,48 +98,9 @@
         <!-- Experience Section -->
         <section id="experience">
             <div class="container reveal">
-                <h2 class="section-title">İş Deneyimi</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="date">Tem 2022 — Günümüz</span>
-                        <h3>Bilgisayar Mühendisi</h3>
-                        <p style="color: var(--primary); font-weight: 600;">Serrasoft Yazılım Limited Şirketi</p>
-                        <div class="glass card" style="margin-top: 1rem; padding: 1.5rem;">
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: 0.8rem;">• Low-latency prensipleri doğrultusunda, DPDK ve C++
-                                    tabanlı korelasyon ve DPI uygulamaları geliştirdim. Yüksek trafikli ağ ortamlarında
-                                    çeşitli protokolleri (TCP, UDP) ağ katmanı düzeyinde analiz edip, filtreleme ve ağ
-                                    trafiği işleme süreçlerini iyileştirdim.</li>
-                                <li style="margin-bottom: 0.8rem;">• Linux tabanlı sistem servisleri geliştirdim;
-                                    loglama, izleme, konfigürasyon ve performans ölçümüne yönelik yardımcı araçlar
-                                    oluşturdum.</li>
-                                <li style="margin-bottom: 0.8rem;">• Projelerde müşteriyle doğrudan iletişim kurarak
-                                    planlama, geliştirme, teslimat ve bakım süreçlerini kapsayan operasyonel
-                                    çalışmalarda aktif rol aldım.</li>
-                                <li style="margin-bottom: 0.8rem;">• Qt 6 ile multiplatform uygulamalar geliştirdim.
-                                </li>
-                                <li style="margin-bottom: 0.8rem;">• Docker kullanarak stand-alone uygulamalar ve CI/CD
-                                    için cross-compile build sistemleri geliştirdim.</li>
-                                <li style="margin-bottom: 0.8rem;">• Uygulama bileşenlerinin dış servislerle REST ve
-                                    SOAP tabanlı etkileşimini sağlayan entegrasyon çözümleri geliştirdim.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="date">Tem 2020 — Eyl 2021</span>
-                        <h3>Stajyer</h3>
-                        <p style="color: var(--primary); font-weight: 600;">Serrasoft Yazılım Limited Şirketi</p>
-                        <div class="glass card" style="margin-top: 1rem; padding: 1.5rem;">
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: 0.8rem;">• Bolu Abant İzzet Baysal Üniversitesinin yemek
-                                    hizmetleriyle ilgili kullanıcıların sorularına yanıt verebilecek bir Telegram
-                                    mesajlaşma botu geliştirdim.</li>
-                                <li style="margin-bottom: 0.8rem;">• Firmanın mevcut projesinde, veri girişi olarak
-                                    kullanılan dosyaların çıktılarındaki hash değerlerinin kontrol edilerek dosya
-                                    bütünlüğü ve güvenliğini artırmaya yönelik geliştirmeler yaptım.</li>
-                            </ul>
-                        </div>
-                    </div>
+                <h2 class="section-title" data-i18n="experience_title">Professional Experience</h2>
+                <div class="timeline" id="experience-timeline">
+                    <!-- Dynamic Content -->
                 </div>
             </div>
         </section>
@@ -153,20 +108,9 @@
         <!-- Education Section -->
         <section id="education">
             <div class="container reveal">
-                <h2 class="section-title">Eğitim</h2>
-                <div class="grid">
-                    <div class="glass card">
-                        <span class="date">2025 — Devam Ediyor</span>
-                        <h3>Yüksek Lisans</h3>
-                        <p>Bolu Abant İzzet Baysal Üniversitesi</p>
-                        <p style="opacity: 0.7;">Bilgisayar Mühendisliği</p>
-                    </div>
-                    <div class="glass card">
-                        <span class="date">2018 — 2022</span>
-                        <h3>Lisans</h3>
-                        <p>Bolu Abant İzzet Baysal Üniversitesi</p>
-                        <p style="opacity: 0.7;">Bilgisayar Mühendisliği</p>
-                    </div>
+                <h2 class="section-title" data-i18n="education_title">Education</h2>
+                <div class="grid" id="education-grid">
+                    <!-- Dynamic Content -->
                 </div>
             </div>
         </section>
@@ -174,28 +118,19 @@
         <!-- Projects Section -->
         <section id="projects">
             <div class="container reveal">
-                <h2 class="section-title">Projeler</h2>
-                <div class="grid">
-                    <div class="glass card">
-                        <i data-lucide="bot" style="color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h3>Tarayıcı Otomasyonları</h3>
-                        <p>Selenium ile geliştirilmiş çeşitli otomasyon ve test botları.</p>
-                    </div>
-                    <div class="glass card">
-                        <i data-lucide="smartphone" style="color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h3>Mobil Uygulamalar</h3>
-                        <p>Flutter ile ihtiyaca özel geliştirilmiş çeşitli mobil çözümler.</p>
-                    </div>
-                    <div class="glass card">
-                        <i data-lucide="file-code" style="color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h3>Open Source CV Builder</h3>
-                        <p>JavaScript tabanlı, açık kaynaklı bir CV oluşturma uygulaması.</p>
-                    </div>
-                    <div class="glass card">
-                        <i data-lucide="cpu" style="color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h3>Gömülü Sistemler & IoT</h3>
-                        <p>ESP8266 ve Arduino ile geliştirilmiş donanım projeleri.</p>
-                    </div>
+                <h2 class="section-title" data-i18n="projects_title">Projects</h2>
+                <div class="grid" id="projects-grid">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="container reveal">
+                <h2 class="section-title" data-i18n="cert_title">Certifications</h2>
+                <div class="skills-container" id="cert-list">
+                    <!-- Dynamic Content -->
                 </div>
             </div>
         </section>
@@ -203,11 +138,12 @@
         <!-- Contact Section -->
         <section id="contact">
             <div class="container reveal" style="text-align: center;">
-                <h2 class="section-title">İletişim</h2>
-                <p style="margin-bottom: 2rem;">Benimle bağlantı kurmak için aşağıdaki kanalları kullanabilirsiniz.</p>
+                <h2 class="section-title" data-i18n="contact_title">Contact</h2>
+                <p style="margin-bottom: 2rem;" data-i18n="contact_subtitle">You can use the following channels to
+                    connect with me.</p>
                 <div class="glass card" style="max-width: 600px; margin: 0 auto; padding: 3rem;">
                     <h3>abbgl53@gmail.com</h3>
-                    <p>İstanbul, Türkiye</p>
+                    <p data-i18n="location">Istanbul, Turkey</p>
                     <div class="contact-links">
                         <a href="https://github.com/abbgl53" target="_blank" class="contact-link"><i
                                 data-lucide="github"></i></a>
@@ -220,8 +156,8 @@
         </section>
     </main>
 
-    <footer style="padding: 2rem 0; text-align: center; opacity: 0.6;">
-        <p>&copy; 2025 Ahmet Babaoğlu. Tüm hakları saklıdır.</p>
+    <footer style="padding: 4rem 0 2rem; text-align: center; opacity: 0.6;">
+        <p data-i18n="footer_text">&copy; 2025 Ahmet Babaoğlu. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
