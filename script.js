@@ -19,7 +19,7 @@ const translations = {
         contact_title: "Contact",
         contact_subtitle: "You can use the following channels to connect with me.",
         location: "Istanbul, Turkey",
-        footer_text: "© 2025 Ahmet Babaoğlu. All rights reserved.",
+        footer_text: "© 2026 Ahmet Babaoğlu. All rights reserved.",
         technical_skills: ["C++", "Python", "Linux", "Docker", "SQL", "QT", "Git", "Selenium", "Flutter", "C#", "D", "Cross Compile", "Vibe Coding", "DPDK", "Deep Packet Inspection (DPI)"],
         soft_skills: ["Crisis Management", "Result Oriented", "Sense of Responsibility", "Team Player", "Analytical Thinking"],
         experience: [
@@ -117,7 +117,7 @@ const translations = {
         contact_title: "İletişim",
         contact_subtitle: "Benimle iletişime geçmek için aşağıdaki kanalları kullanabilirsiniz.",
         location: "İstanbul, Türkiye",
-        footer_text: "© 2025 Ahmet Babaoğlu. Tüm hakları saklıdır.",
+        footer_text: "© 2026 Ahmet Babaoğlu. Tüm hakları saklıdır.",
         technical_skills: ["C++", "Python", "Linux", "Docker", "SQL", "Qt", "Git", "Selenium", "Flutter", "C#", "D", "Çapraz Derleme", "Vibe Coding", "DPDK", "Derin Paket İncelemesi (DPI)"],
         soft_skills: ["Kriz Yönetimi", "Sonuç Odaklılık", "Sorumluluk Bilinci", "Takım Çalışmasına Yatkınlık", "Analitik Düşünme"],
         experience: [
